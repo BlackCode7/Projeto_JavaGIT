@@ -1,7 +1,9 @@
 package programacao_relogio;
 
 public class Relogio {
-
+		
+	// Classe relógio em java
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int hora, minuto, segundo;
@@ -10,8 +12,10 @@ public class Relogio {
 				for(segundo=0;segundo<60;segundo++) {
 					try {
 						Thread.sleep(1000);
-						if(segundo == 10) {
-							System.exit(0);						}
+						if(segundo == 1) {
+							System.exit(0);
+						}
+						
 					}catch(InterruptedException erro){
 						erro.toString();
 					}
