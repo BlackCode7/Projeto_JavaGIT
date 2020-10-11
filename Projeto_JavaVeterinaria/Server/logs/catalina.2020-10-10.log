@@ -1,0 +1,38 @@
+10-Oct-2020 22:25:40.120 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.58
+10-Oct-2020 22:25:40.126 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 21:45:33 UTC
+10-Oct-2020 22:25:40.126 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.58.0
+10-Oct-2020 22:25:40.127 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+10-Oct-2020 22:25:40.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+10-Oct-2020 22:25:40.137 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+10-Oct-2020 22:25:40.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-11.0.8
+10-Oct-2020 22:25:40.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.8+10-LTS
+10-Oct-2020 22:25:40.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-Oct-2020 22:25:40.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server
+10-Oct-2020 22:25:40.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server
+10-Oct-2020 22:25:40.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server
+10-Oct-2020 22:25:40.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server
+10-Oct-2020 22:25:40.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\temp
+10-Oct-2020 22:25:40.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\conf\logging.properties
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: exit
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: abort
+10-Oct-2020 22:25:40.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms128m
+10-Oct-2020 22:25:40.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx256m
+10-Oct-2020 22:25:40.144 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-11.0.8\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python38\Scripts\;C:\Python38\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Java\jdk-11.0.8\bin;C:\WINDOWS\ServiceProfiles\LocalService\AppData\Local\Microsoft\WindowsApps;.]
+10-Oct-2020 22:25:40.211 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Oct-2020 22:25:40.384 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+10-Oct-2020 22:25:40.401 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 889 ms
+10-Oct-2020 22:25:40.474 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Oct-2020 22:25:40.474 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.58
+10-Oct-2020 22:25:40.494 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\docs]
+10-Oct-2020 22:25:40.865 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [106] milliseconds.
+10-Oct-2020 22:25:40.895 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\docs] has finished in [401] ms
+10-Oct-2020 22:25:40.896 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\manager]
+10-Oct-2020 22:25:40.947 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\manager] has finished in [51] ms
+10-Oct-2020 22:25:40.947 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\ROOT]
+10-Oct-2020 22:25:40.981 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Usuario\Desktop\Projeto_JavaGIT\Projeto_JavaVeterinaria\Server\webapps\ROOT] has finished in [34] ms
+10-Oct-2020 22:25:40.987 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Oct-2020 22:25:41.011 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 609 ms
