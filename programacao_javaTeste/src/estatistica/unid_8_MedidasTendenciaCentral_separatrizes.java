@@ -53,8 +53,7 @@ package estatistica;
  * PERCENTIS = SEPARAM OS DADOS EM 100 PARTES IGUAIS
  * 
  * UNID_8_2
- * Medidas de tendência central para dados não agrupados
- * 
+ * Medidas de tendência central para dados não agrupados 
  * EXEMPLO:
  * Suponha que precisamos ter uma estimativa dos pesos dos recém-nascidos 
  * de uma maternidade. A média vai resumir, em um único valor, esses 
@@ -103,6 +102,11 @@ package estatistica;
  */
 
 public class unid_8_MedidasTendenciaCentral_separatrizes {
+	
+	public static double media(double peso1) {
+		double peso1 = [];
+		return (peso1/2);		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
