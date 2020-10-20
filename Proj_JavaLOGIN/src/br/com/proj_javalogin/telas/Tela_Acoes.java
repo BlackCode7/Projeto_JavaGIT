@@ -18,7 +18,7 @@ public class Tela_Acoes extends javax.swing.JFrame {
         //AQUI CLIENTES - chamando tela cadastro de clientes aqui
         Cadastro_Clientes clientes = new Cadastro_Clientes();
         clientes.setVisible(true);
-        this.dispose();
+        //this.dispose();
     }
     
     
