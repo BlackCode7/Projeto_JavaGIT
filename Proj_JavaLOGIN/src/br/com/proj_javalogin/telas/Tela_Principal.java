@@ -27,10 +27,13 @@ public class Tela_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane2 = new javax.swing.JDesktopPane();
+        DesktopFundo = new javax.swing.JDesktopPane();
         jLabel2 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        VarUsuarioEsq = new javax.swing.JLabel();
+        VarDataEsq = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Menu = new javax.swing.JMenuBar();
+        menCadUsuarios = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -38,14 +41,14 @@ public class Tela_Principal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        MenRelLucros = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        MenDeleteUsuario = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
@@ -53,31 +56,41 @@ public class Tela_Principal extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        MenAjuda = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Cadastro Veterinária Bandeirantes");
         setResizable(false);
 
-        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
-        jDesktopPane2.setLayout(jDesktopPane2Layout);
-        jDesktopPane2Layout.setHorizontalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+        DesktopFundo.setBackground(new java.awt.Color(0, 153, 51));
+
+        javax.swing.GroupLayout DesktopFundoLayout = new javax.swing.GroupLayout(DesktopFundo);
+        DesktopFundo.setLayout(DesktopFundoLayout);
+        DesktopFundoLayout.setHorizontalGroup(
+            DesktopFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 466, Short.MAX_VALUE)
         );
-        jDesktopPane2Layout.setVerticalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DesktopFundoLayout.setVerticalGroup(
+            DesktopFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/proj_javalogin/icones/icones/logoVeteriBand.png"))); // NOI18N
 
-        jMenu1.setText("Cadastros");
+        VarUsuarioEsq.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        VarUsuarioEsq.setText("Usuário");
+
+        VarDataEsq.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        VarDataEsq.setText("Data");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/proj_javalogin/telas/faixaLogoFrontal.png"))); // NOI18N
+
+        menCadUsuarios.setText("Cadastros");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setText("Clientes");
-        jMenu1.add(jMenuItem1);
+        menCadUsuarios.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem2.setText("Pets");
@@ -86,99 +99,99 @@ public class Tela_Principal extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        menCadUsuarios.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem3.setText("Fornecedores");
-        jMenu1.add(jMenuItem3);
+        menCadUsuarios.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem4.setText("Produtos");
-        jMenu1.add(jMenuItem4);
+        menCadUsuarios.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0));
         jMenuItem5.setText("Gastos");
-        jMenu1.add(jMenuItem5);
+        menCadUsuarios.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem6.setText("Lucros");
-        jMenu1.add(jMenuItem6);
+        menCadUsuarios.add(jMenuItem6);
 
         jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem13.setText("Usuários");
-        jMenu1.add(jMenuItem13);
+        menCadUsuarios.add(jMenuItem13);
 
-        jMenuBar1.add(jMenu1);
+        Menu.add(menCadUsuarios);
 
-        jMenu2.setText("Relatórios");
+        MenRelLucros.setText("Relatórios");
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem7.setText("Clientes");
-        jMenu2.add(jMenuItem7);
+        MenRelLucros.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem8.setText("Pets");
-        jMenu2.add(jMenuItem8);
+        MenRelLucros.add(jMenuItem8);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setText("Fornecedores");
-        jMenu2.add(jMenuItem9);
+        MenRelLucros.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem10.setText("Produtos");
-        jMenu2.add(jMenuItem10);
+        MenRelLucros.add(jMenuItem10);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem11.setText("Gastos");
-        jMenu2.add(jMenuItem11);
+        MenRelLucros.add(jMenuItem11);
 
         jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem12.setText("Lucros");
-        jMenu2.add(jMenuItem12);
+        MenRelLucros.add(jMenuItem12);
 
-        jMenuBar1.add(jMenu2);
+        Menu.add(MenRelLucros);
 
-        jMenu3.setText("Deletar");
+        MenDeleteUsuario.setText("Deletar");
 
         jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem15.setText("Clientes");
-        jMenu3.add(jMenuItem15);
+        MenDeleteUsuario.add(jMenuItem15);
 
         jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem16.setText("Pets");
-        jMenu3.add(jMenuItem16);
+        MenDeleteUsuario.add(jMenuItem16);
 
         jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem17.setText("Fornecedores");
-        jMenu3.add(jMenuItem17);
+        MenDeleteUsuario.add(jMenuItem17);
 
         jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem18.setText("Produtos");
-        jMenu3.add(jMenuItem18);
+        MenDeleteUsuario.add(jMenuItem18);
 
         jMenuItem19.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem19.setText("Gastos");
-        jMenu3.add(jMenuItem19);
+        MenDeleteUsuario.add(jMenuItem19);
 
         jMenuItem20.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem20.setText("Lucros");
-        jMenu3.add(jMenuItem20);
+        MenDeleteUsuario.add(jMenuItem20);
 
         jMenuItem21.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem21.setText("Usuários");
-        jMenu3.add(jMenuItem21);
+        MenDeleteUsuario.add(jMenuItem21);
 
-        jMenuBar1.add(jMenu3);
+        Menu.add(MenDeleteUsuario);
 
-        jMenu5.setText("Ajuda");
+        MenAjuda.setText("Ajuda");
 
         jMenuItem14.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem14.setText("Sobre Teclas");
-        jMenu5.add(jMenuItem14);
+        MenAjuda.add(jMenuItem14);
 
-        jMenuBar1.add(jMenu5);
+        Menu.add(MenAjuda);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,23 +199,41 @@ public class Tela_Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(79, 79, 79))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DesktopFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(74, 74, 74))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(VarDataEsq)
+                                    .addComponent(VarUsuarioEsq))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jDesktopPane2)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(VarUsuarioEsq)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(VarDataEsq)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
+                    .addComponent(DesktopFundo))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 309, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(25, 25, 25))
         );
 
-        setSize(new java.awt.Dimension(766, 504));
+        setSize(new java.awt.Dimension(756, 466));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -246,13 +277,15 @@ public class Tela_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane2;
+    private javax.swing.JDesktopPane DesktopFundo;
+    private javax.swing.JMenu MenAjuda;
+    private javax.swing.JMenu MenDeleteUsuario;
+    private javax.swing.JMenu MenRelLucros;
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JLabel VarDataEsq;
+    private javax.swing.JLabel VarUsuarioEsq;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -274,5 +307,6 @@ public class Tela_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenu menCadUsuarios;
     // End of variables declaration//GEN-END:variables
 }
