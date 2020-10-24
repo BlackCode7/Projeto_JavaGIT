@@ -32,11 +32,18 @@ public class login_tela extends javax.swing.JFrame {
             // se existir um usuario e senha conrrespondente
             if (rs.next()) {
                 // chamando aqui a tela Tela_Acoes
-                Tela_Acoes tela_acoes = new Tela_Acoes();
-                tela_acoes.setVisible(true);
-                //Este comando tela a tela de login, quando clicado
+                Tela_Principal tela_principal = new Tela_Principal();
+                tela_principal.setVisible(true);
                 this.dispose();
+                //Tela_Acoes tela_acoes = new Tela_Acoes();
+                //tela_acoes.setVisible(true);
+                //Este comando tela a tela de login, quando clicado
+                //this.dispose();
                 conexao.close();
+                
+         
+                        
+                     
 
             } else {
                 JOptionPane.showMessageDialog(null, "usuário ou senha inválida(s)");

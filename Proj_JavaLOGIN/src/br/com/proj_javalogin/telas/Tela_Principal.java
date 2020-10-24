@@ -5,6 +5,10 @@
  */
 package br.com.proj_javalogin.telas;
 
+import java.text.DateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -56,12 +60,19 @@ public class Tela_Principal extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
-        MenAjuda = new javax.swing.JMenu();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        MenSair = new javax.swing.JMenu();
+        itemMenuSair = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        menuAjuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Cadastro Veterinária Bandeirantes");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         DesktopFundo.setBackground(new java.awt.Color(0, 153, 51));
 
@@ -90,10 +101,12 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setText("Clientes");
+        jMenuItem1.setEnabled(false);
         menCadUsuarios.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem2.setText("Pets");
+        jMenuItem2.setEnabled(false);
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -103,22 +116,27 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem3.setText("Fornecedores");
+        jMenuItem3.setEnabled(false);
         menCadUsuarios.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem4.setText("Produtos");
+        jMenuItem4.setEnabled(false);
         menCadUsuarios.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0));
         jMenuItem5.setText("Gastos");
+        jMenuItem5.setEnabled(false);
         menCadUsuarios.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem6.setText("Lucros");
+        jMenuItem6.setEnabled(false);
         menCadUsuarios.add(jMenuItem6);
 
         jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem13.setText("Usuários");
+        jMenuItem13.setEnabled(false);
         menCadUsuarios.add(jMenuItem13);
 
         Menu.add(menCadUsuarios);
@@ -183,13 +201,34 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         Menu.add(MenDeleteUsuario);
 
-        MenAjuda.setText("Ajuda");
+        MenSair.setText("Opções");
+        MenSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenSairActionPerformed(evt);
+            }
+        });
 
-        jMenuItem14.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem14.setText("Sobre Teclas");
-        MenAjuda.add(jMenuItem14);
+        itemMenuSair.setText("Sair");
+        itemMenuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuSairActionPerformed(evt);
+            }
+        });
+        MenSair.add(itemMenuSair);
 
-        Menu.add(MenAjuda);
+        Menu.add(MenSair);
+
+        jMenu1.setText("Ajuda");
+
+        menuAjuda.setText("Ajuda");
+        menuAjuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAjudaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuAjuda);
+
+        Menu.add(jMenu1);
 
         setJMenuBar(Menu);
 
@@ -241,6 +280,38 @@ public class Tela_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        // Nome
+                
+        //Data
+        Date data = new Date();
+        DateFormat formatador = DateFormat.getDateInstance(DateFormat.SHORT);
+        VarDataEsq.setText(formatador.format(data));
+    }//GEN-LAST:event_formWindowActivated
+
+    private void MenSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenSairActionPerformed
+        // TODO add your handling code here:
+        //int sair = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Atenção", JOptionPane.YES_NO_OPTION);
+    }//GEN-LAST:event_MenSairActionPerformed
+
+    private void itemMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSairActionPerformed
+        // TODO add your handling code here:
+        // caixa de dialogo
+        
+        int sair = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Atenção", JOptionPane.YES_NO_OPTION );
+        if (sair == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_itemMenuSairActionPerformed
+
+    private void menuAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAjudaActionPerformed
+        // Chamando a tela sobre
+        Tela_Sobre telaSobre = new Tela_Sobre();
+        telaSobre.setVisible(true);       
+        
+    }//GEN-LAST:event_menuAjudaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,35 +349,37 @@ public class Tela_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopFundo;
-    private javax.swing.JMenu MenAjuda;
     private javax.swing.JMenu MenDeleteUsuario;
     private javax.swing.JMenu MenRelLucros;
+    private javax.swing.JMenu MenSair;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel VarDataEsq;
     private javax.swing.JLabel VarUsuarioEsq;
+    private javax.swing.JMenuItem itemMenuSair;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenu1;
+    public static javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
+    public static javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
+    public static javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    public static javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JMenuItem jMenuItem4;
+    public static javax.swing.JMenuItem jMenuItem5;
+    public static javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu menCadUsuarios;
+    private javax.swing.JMenuItem menuAjuda;
     // End of variables declaration//GEN-END:variables
 }
