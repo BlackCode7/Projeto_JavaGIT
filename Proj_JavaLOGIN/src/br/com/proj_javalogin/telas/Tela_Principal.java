@@ -44,7 +44,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
+        MenuUsuario = new javax.swing.JMenuItem();
         MenRelLucros = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -75,6 +75,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         });
 
         DesktopFundo.setBackground(new java.awt.Color(0, 153, 51));
+        DesktopFundo.setPreferredSize(new java.awt.Dimension(466, 466));
 
         javax.swing.GroupLayout DesktopFundoLayout = new javax.swing.GroupLayout(DesktopFundo);
         DesktopFundo.setLayout(DesktopFundoLayout);
@@ -98,15 +99,18 @@ public class Tela_Principal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/proj_javalogin/telas/faixaLogoFrontal.png"))); // NOI18N
 
         menCadUsuarios.setText("Cadastros");
+        menCadUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menCadUsuariosActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem1.setText("Clientes");
-        jMenuItem1.setEnabled(false);
         menCadUsuarios.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem2.setText("Pets");
-        jMenuItem2.setEnabled(false);
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -116,32 +120,29 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem3.setText("Fornecedores");
-        jMenuItem3.setEnabled(false);
         menCadUsuarios.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem4.setText("Produtos");
-        jMenuItem4.setEnabled(false);
         menCadUsuarios.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0));
         jMenuItem5.setText("Gastos");
-        jMenuItem5.setEnabled(false);
         menCadUsuarios.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem6.setText("Lucros");
-        jMenuItem6.setEnabled(false);
         menCadUsuarios.add(jMenuItem6);
 
-        jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem13.setText("Usuários");
-        jMenuItem13.setEnabled(false);
-        menCadUsuarios.add(jMenuItem13);
+        MenuUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_MASK));
+        MenuUsuario.setText("Usuários");
+        MenuUsuario.setEnabled(false);
+        menCadUsuarios.add(MenuUsuario);
 
         Menu.add(menCadUsuarios);
 
         MenRelLucros.setText("Relatórios");
+        MenRelLucros.setEnabled(false);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem7.setText("Clientes");
@@ -153,6 +154,11 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setText("Fornecedores");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         MenRelLucros.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
@@ -268,7 +274,7 @@ public class Tela_Principal extends javax.swing.JFrame {
                         .addComponent(VarDataEsq)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                         .addComponent(jLabel2))
-                    .addComponent(DesktopFundo))
+                    .addComponent(DesktopFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -312,6 +318,18 @@ public class Tela_Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_menuAjudaActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void menCadUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadUsuariosActionPerformed
+        // As Linhas abaixo vãp abrir o form tela usuario dentro da tela desktop
+        Tela_Usuario usuario = new Tela_Usuario();
+        usuario.setVisible(true);
+        DesktopFundo.add(usuario);
+        
+    }//GEN-LAST:event_menCadUsuariosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -350,32 +368,32 @@ public class Tela_Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopFundo;
     private javax.swing.JMenu MenDeleteUsuario;
-    private javax.swing.JMenu MenRelLucros;
+    public static javax.swing.JMenu MenRelLucros;
     private javax.swing.JMenu MenSair;
     private javax.swing.JMenuBar Menu;
+    public static javax.swing.JMenuItem MenuUsuario;
     private javax.swing.JLabel VarDataEsq;
-    private javax.swing.JLabel VarUsuarioEsq;
+    public static javax.swing.JLabel VarUsuarioEsq;
     private javax.swing.JMenuItem itemMenuSair;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
-    public static javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    public static javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
-    public static javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
-    public static javax.swing.JMenuItem jMenuItem3;
-    public static javax.swing.JMenuItem jMenuItem4;
-    public static javax.swing.JMenuItem jMenuItem5;
-    public static javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

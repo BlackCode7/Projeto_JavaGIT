@@ -7,6 +7,7 @@ package br.com.proj_javalogin.telas;
 
 import java.sql.*;
 import br.com.proj_javalogin.DAO.conexaoBancoLogin;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class login_tela extends javax.swing.JFrame {
@@ -31,19 +32,40 @@ public class login_tela extends javax.swing.JFrame {
             // fazendo a execução com estruturas de condicionais
             // se existir um usuario e senha conrrespondente
             if (rs.next()) {
-                // chamando aqui a tela Tela_Acoes
-                Tela_Principal tela_principal = new Tela_Principal();
-                tela_principal.setVisible(true);
-                this.dispose();
+                // A linha abaixo verifica o campo perfil no banco de dados t_usuarioa
+                String perfil = rs.getString(4);
+                //System.out.println(perfil);
+                //Criando uma estrutura de verifique qual o tipo de usuário esta logando na aplicação
+                if (perfil.equals("admin")){
+                    // chamando aqui a tela Tela_Acoes
+                    Tela_Principal tela_principal = new Tela_Principal();
+                    tela_principal.setVisible(true);
+                    // estas 2 linhas liberam todos os recursos da aplicação para os usuários com perfil admin
+                    // Aqui libera o relatório1
+                    Tela_Principal.MenRelLucros.setEnabled(true);
+                    //Aqui libera os usuários
+                    Tela_Principal.MenuUsuario.setEnabled(true);
+                    // esta linha pega no banco de dados o nome do usario que esta logado
+                    Tela_Principal.VarUsuarioEsq.setText(rs.getString(2));
+                    // Destacando o usuário admin com a cor vermelha
+                    Tela_Principal.VarUsuarioEsq.setForeground(Color.red);
+                    this.dispose();
+                                        
+                } else {
+                    // Neste trecho de código se o usuário não tiver o perfil admin, ele é um usuário comum
+                    Tela_Principal tela_principal = new Tela_Principal();
+                    tela_principal.setVisible(true);
+                    // Aqui nesta linha exibe o nome do usuário que esta logado na esquerda da tela principal
+                    Tela_Principal.VarUsuarioEsq.setText(rs.getString(2));
+                    this.dispose();
+                }
+                
+                
                 //Tela_Acoes tela_acoes = new Tela_Acoes();
                 //tela_acoes.setVisible(true);
                 //Este comando tela a tela de login, quando clicado
                 //this.dispose();
-                conexao.close();
-                
-         
-                        
-                     
+                                 
 
             } else {
                 JOptionPane.showMessageDialog(null, "usuário ou senha inválida(s)");
