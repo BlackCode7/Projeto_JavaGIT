@@ -9,14 +9,76 @@ package br.com.proj_javalogin.telas;
  *
  * @author Usuario
  */
+
+import java.sql.*;
+import br.com.proj_javalogin.DAO.conexaoBancoLogin;
+import javax.swing.JOptionPane;
+
 public class Tela_Usuario extends javax.swing.JInternalFrame {
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    
 
     /**
      * Creates new form Tela_Usuario
      */
     public Tela_Usuario() {
         initComponents();
+        conexao = conexaoBancoLogin.conector();        
     }
+    
+    // Método do botão listar
+    private void consultar(){      
+        
+        String sql = "select * from t_usuarios where idusuario=?";
+        
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, varUserId.getText());
+            rs =pst.executeQuery();
+            if (rs.next()) {
+                varUserNome.setText(rs.getString(2));
+                // código para o comboBox
+                varComboUserAdm.setSelectedItem(rs.getString(4));
+                varUser_password.setText(rs.getString(3));                         
+                
+            } else {
+                // se não achar um usuario correspondente, aqui tratamos o erro
+                JOptionPane.showMessageDialog(null, "Usuário não cadastrado! Tente outro número de Id!");
+                // Limpando os campos
+                varUserNome.setText(null);
+                varComboUserAdm.setSelectedItem(null);
+                varUser_password.setText(null);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,  e);
+        }
+    }
+    
+    // Método create ou update
+    private void adicionar(){
+        //comnado into insere dados no banco
+        String sql = "insert into t_usuarios(idusuario,usuario,password,perfil) values(?,?,?,?)";
+        try{
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, varUserId.getText());
+            pst.setString(2, varUserNome.getText());
+            pst.setString(3, varUser_password.getText());
+            //Necessário converter o varComboUserAdm para o tipo string com o método toString
+            pst.setString(4, varComboUserAdm.getSelectedItem().toString());
+            
+            // A linha abaixo atualiza a tabela com os dados do formulario
+            pst.executeUpdate();
+            
+        }catch(Exception e){
+            //Nesta linha caso não tenha o usuário ele me retorna o erro da operação
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,24 +89,184 @@ public class Tela_Usuario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        varUserId = new javax.swing.JTextField();
+        varUserNome = new javax.swing.JTextField();
+        varUser_password = new javax.swing.JTextField();
+        varComboUserAdm = new javax.swing.JComboBox<>();
+        btn_cadastrar = new javax.swing.JButton();
+        btn_listar = new javax.swing.JButton();
+        btn_atualizar = new javax.swing.JButton();
+        btn_deletar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+
         setTitle("Usuários");
-        setPreferredSize(new java.awt.Dimension(466, 466));
+        setPreferredSize(new java.awt.Dimension(518, 318));
+
+        jLabel1.setText("Id");
+
+        jLabel2.setText("Nome");
+
+        jLabel3.setText("password");
+
+        jLabel4.setText("Perfil");
+
+        varUserId.setBackground(new java.awt.Color(255, 255, 255));
+
+        varUserNome.setBackground(new java.awt.Color(255, 255, 255));
+        varUserNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varUserNomeActionPerformed(evt);
+            }
+        });
+
+        varUser_password.setBackground(new java.awt.Color(255, 255, 255));
+
+        varComboUserAdm.setBackground(new java.awt.Color(255, 255, 255));
+        varComboUserAdm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "usuario", "Admin" }));
+        varComboUserAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varComboUserAdmActionPerformed(evt);
+            }
+        });
+
+        btn_cadastrar.setText("cadastrar");
+        btn_cadastrar.setToolTipText("Adicionar Usuários");
+        btn_cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarActionPerformed(evt);
+            }
+        });
+
+        btn_listar.setText("listar");
+        btn_listar.setToolTipText("visualizar usuários cadastrados");
+        btn_listar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listarActionPerformed(evt);
+            }
+        });
+
+        btn_atualizar.setText("atualizar");
+        btn_atualizar.setToolTipText("Atualizar dados do usuário");
+        btn_atualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_deletar.setText("deletar");
+        btn_deletar.setToolTipText("Apagar usuários");
+        btn_deletar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 51));
+        jLabel5.setText("Cadastro de Usuários");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_cadastrar)
+                        .addGap(48, 48, 48)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(varUser_password, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(varUserNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(varUserId, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(varComboUserAdm, 0, 258, Short.MAX_VALUE)))
+                        .addGap(86, 86, 86))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(btn_atualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(btn_deletar)
+                        .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 442, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(varUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(varUserNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(varUser_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(varComboUserAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(28, 81, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cadastrar)
+                            .addComponent(btn_listar)
+                            .addComponent(btn_atualizar)
+                            .addComponent(btn_deletar))
+                        .addGap(14, 14, 14))))
         );
 
-        setBounds(0, 0, 622, 464);
+        setBounds(0, 0, 518, 318);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void varUserNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varUserNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varUserNomeActionPerformed
+
+    private void varComboUserAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varComboUserAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varComboUserAdmActionPerformed
+
+    private void btn_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarActionPerformed
+        //chamando o método consultar
+        consultar();
+    }//GEN-LAST:event_btn_listarActionPerformed
+
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+        // TODO add your handling code here:
+        adicionar();
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_atualizar;
+    private javax.swing.JButton btn_cadastrar;
+    private javax.swing.JButton btn_deletar;
+    private javax.swing.JButton btn_listar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JComboBox<String> varComboUserAdm;
+    private javax.swing.JTextField varUserId;
+    private javax.swing.JTextField varUserNome;
+    private javax.swing.JTextField varUser_password;
     // End of variables declaration//GEN-END:variables
 }

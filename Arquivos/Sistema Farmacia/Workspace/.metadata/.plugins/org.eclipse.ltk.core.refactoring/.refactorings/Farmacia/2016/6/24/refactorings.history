@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;menu.xhtml&apos; to &apos;includes&apos;" description="Move &apos;menu.xhtml&apos; to &apos;includes&apos;" destination="WebContent/includes" element1="WebContent/pages/menu.xhtml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1465233553195" updateReferences="true"/>
+</session>
